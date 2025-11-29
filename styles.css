@@ -1,0 +1,87 @@
+:root {
+  --bg: #f7f7f7;
+  --card: #ffffff;
+  --text: #222;
+}
+[data-theme="dark"] {
+  --bg: #0f1720;
+  --card: #0b1116;
+  --text: #e6eef8;
+}
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  height: 100%;
+}
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25)),
+    url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+.module-card {
+  cursor: pointer;
+  transition: transform 0.18s;
+}
+.module-card:hover {
+  transform: scale(1.03);
+}
+.fade-in {
+  animation: fadeIn 0.35s;
+}
+.slide-right {
+  animation: slideInRight 0.35s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Toast animation (visual smoothing) */
+.swal2-toast-show {
+  animation: swal-slide-in 0.4s;
+}
+@keyframes swal-slide-in {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.card-custom {
+  background: var(--card);
+  color: var(--text);
+  border-radius: 0.6rem;
+}
+.fixed-top + .content {
+  padding-top: 70px;
+}
+
+/* small responsive tweaks */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 12px;
+  }
+}
